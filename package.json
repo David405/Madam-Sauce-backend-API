@@ -19,7 +19,8 @@
     "homepage": "https://github.com/David405/Madam-Sauce-backend-API#readme",
     "dependencies": {
         "express": "^4.17.1",
-        "express-edge": "^2.0.2"
+        "express-edge": "^2.0.2",
+        "mongoose": "^5.10.9"
     },
     "devDependencies": {
         "nodemon": "^2.0.5"
