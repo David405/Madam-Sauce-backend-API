@@ -1,0 +1,23 @@
+{
+  "name": "madam-sauce-backend-api",
+  "version": "1.0.0",
+  "description": "The backend API for Madam Sauce, a food order platform built as a requirement for Genesys Internship using Expressjs and Mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David405/Madam-Sauce-backend-API.git"
+  },
+  "author": "David Asamonye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David405/Madam-Sauce-backend-API/issues"
+  },
+  "homepage": "https://github.com/David405/Madam-Sauce-backend-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.5"
+  }
+}
