@@ -8,6 +8,8 @@ const fileUpload = require('express-fileupload');
 const createMenuController = require('./controllers/createMenu')
 const getAllMenuController = require('./controllers/getMenu')
 const storeMenuController = require('./controllers/storeMenu')
+const createUserController = require('./controllers/createUser')
+const storeUserController = require('./controllers/storeUser')
 
 const app = new express();
 
@@ -25,13 +27,12 @@ app.use(bodyParser.urlencoded({
 }));
 
 const storeMenu = require('./middleware/storeMenu')
-app.use('/menu/store', storeMenu)
-
+app.use('/menu/store', storeMenu);
 app.get('/', getAllMenuController);
-
 app.get('/menu/new', createMenuController);
-
 app.post('/menu/store', storeMenuController);
+app.get('/auth/register', createUserController);
+app.post('/users/register', storeUserController);
 
 app.listen(4000, () => {
     console.log('App listening on port 4000')
