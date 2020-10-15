@@ -22,6 +22,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+const storeMenu = require('./middleware/storeMenu')
+app.use('/menu/store', storeMenu)
+
 app.get('/', async(req, res) => {
     const menu = await Menu.find({})
     res.render('index', {
