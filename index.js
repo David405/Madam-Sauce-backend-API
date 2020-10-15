@@ -39,7 +39,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-const storeMenu = require('./middleware/storeMenu')
+const storeMenu = require('./middleware/storeMenu');
+const auth = require('./middleware/auth');
 app.use('/menu/store', storeMenu);
 app.get('/', getAllMenuController);
 app.get('/menu/new', createMenuController);
