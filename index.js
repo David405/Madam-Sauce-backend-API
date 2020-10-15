@@ -5,7 +5,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 
-const Menu = require('./database/models/Menu');
+const createMenuController = require('./controllers/createMenu')
+const getAllMenuController = require('./controllers/getMenu')
+const storeMenuController = require('./controllers/storeMenu')
 
 const app = new express();
 
@@ -25,40 +27,11 @@ app.use(bodyParser.urlencoded({
 const storeMenu = require('./middleware/storeMenu')
 app.use('/menu/store', storeMenu)
 
-app.get('/', async(req, res) => {
-    const menu = await Menu.find({})
-    res.render('index', {
-        menu
-    });
-})
+app.get('/', getAllMenuController);
 
-app.get('/menu/:id', async(req, res) => {
-    const menu = await Menu.findById(req.params.id)
-    res.render('menu', {
-        menu
-    })
-})
+app.get('/menu/new', createMenuController);
 
-app.get('/menu/new', (req, res) => {
-    res.render('create')
-})
-
-app.post('/menu/store', (req, res) => {
-    const {
-        image
-    } = req.files
-
-    image.mv(path.resolve(__dirname, 'public/images', image.name), (error) => {
-        Menu.create({
-            ...req.body,
-            image: `/images/${image.name}`
-
-        }, (error, post) => {
-            console.log(req.body)
-            res.redirect('/')
-        })
-    })
-});
+app.post('/menu/store', storeMenuController);
 
 app.listen(4000, () => {
     console.log('App listening on port 4000')
