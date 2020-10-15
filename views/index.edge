@@ -22,11 +22,14 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       @each(order in menu)
         <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
+            <div class="post-image">
+              {{ order.image }}
+            </div>
+        </div>
+        <div class="post-preview">
+            <h4 class="post-title">
               {{ order.title }}
-            </h2>
-          </a>
+            </h4>
         </div>
         <hr>
       @endeach
