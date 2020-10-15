@@ -17,10 +17,6 @@ const loginUserController = require('./controllers/loginUser')
 
 const app = new express();
 
-app.use(expressSession({
-    secret: 'secret'
-}));
-
 mongoose.connect('mongodb://localhost:27017/madam-sauce', { useNewUrlParser: true })
     .then(() => 'You are now connected to Mongo!')
     .catch(err => console.error('Something went wrong', err))
