@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const expressSession = require('express-session');
-const connectMongo = require('connect-mongo')
+const connectMongo = require('connect-mongo');
 
 const createMenuController = require('./controllers/createMenu')
 const getAllMenuController = require('./controllers/getMenu')
@@ -14,6 +14,9 @@ const createUserController = require('./controllers/createUser')
 const storeUserController = require('./controllers/storeUser')
 const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
+const createOrderController = require('./controllers/createOrder')
+const storeOrderController = require('./controllers/storeOrder')
+const logoutController = require('./controllers/logout')
 
 const app = new express();
 
@@ -41,14 +44,19 @@ app.use(bodyParser.urlencoded({
 
 const storeMenu = require('./middleware/storeMenu');
 const auth = require('./middleware/auth');
+const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated');
+
 app.use('/menu/store', storeMenu);
 app.get('/', getAllMenuController);
 app.get('/menu/new', createMenuController);
 app.post('/menu/store', storeMenuController);
-app.get('/auth/login', loginController);
-app.post('/users/login', loginUserController);
-app.get('/auth/register', createUserController);
-app.post('/users/register', storeUserController);
+app.get('/auth/login', redirectIfAuthenticated, loginController);
+app.post('/users/login', redirectIfAuthenticated, loginUserController);
+app.get('/auth/register', redirectIfAuthenticated, createUserController);
+app.post('/users/register', redirectIfAuthenticated, storeUserController);
+app.get('/order/new', createOrderController);
+app.post('/order/store', storeOrderController);
+app.get('/auth/logout', redirectIfAuthenticated, logoutController);
 
 app.listen(4000, () => {
     console.log('App listening on port 4000')

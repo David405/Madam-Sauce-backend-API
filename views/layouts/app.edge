@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
  
-  <title>Clean Blog - Start Bootstrap Theme</title>
+  <title>Madam Sauce Kitchen</title>
  
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -32,9 +32,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+        @if(!auth)
+         <li class="nav-item">
+            <a class="nav-link" href="/auth/login">Admin signin</a>
+          </li>
+          @else
           <li class="nav-item">
             <a class="nav-link" href="/menu/new">Create Menu</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/auth/logout">Logout</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

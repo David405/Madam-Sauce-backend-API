@@ -19,17 +19,30 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      @each(order in menu)
+      @each(menu in menus)
         <div class="post-preview">
             <div class="post-image">
-              <img src="{{ order.image }}">
+              <img src="{{ menu.image }}" style="height: 120px; width: 120px">
             </div>
         </div>
         <div class="post-preview">
             <h4 class="post-title">
-              {{ order.title }}
+              {{ menu.title }}
             </h4>
         </div>
+        <div class="post-preview">
+            <p class="post-title">
+              {{ menu.description }}
+            </p>
+        </div>
+        <div class="post-preview">
+            <b class="post-title">
+              {{ menu.price }}
+            </b>
+        </div>
+        <a href="/order/new">
+        <button class="btn btn-success">Place order</button>
+        </a>
         <hr>
       @endeach
       </div>
