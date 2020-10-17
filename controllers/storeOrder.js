@@ -1,7 +1,15 @@
 const Order = require('../database/models/Order')
 
 module.exports = (req, res) => {
-    Order.create(req.body, (error, post) => {
+    const data = {
+        name: req.body.name,
+        quantity: req.body.quantity,
+        address: req.body.address,
+        menu: req.params._id
+    }
+
+    Order.create(data, (error, post) => {
+        console.log(data)
         res.redirect('/')
     })
 }

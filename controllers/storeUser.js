@@ -1,7 +1,12 @@
 const User = require('../database/models/User')
 
 module.exports = (req, res) => {
-    User.create(req.body, (error, user) => {
+    const data = {
+        username: req.body.username,
+        password: req.body.password
+    }
+
+    User.create(data, (error, user) => {
         if (error) {
             return res.redirect('/auth/register')
         }

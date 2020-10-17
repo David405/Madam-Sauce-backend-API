@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = new mongoose.Schema({
-    id: String,
-    quantity: String,
+    name: String,
+    quantity: Number,
     address: String,
+    menu: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Menu'
+    }
 });
 
 const Order = mongoose.model('Order', OrderSchema);

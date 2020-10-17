@@ -6,9 +6,15 @@ module.exports = (req, res) => {
         image
     } = req.files
 
+    const data = {
+        title: req.body.title,
+        description: req.body.description,
+        price: req.body.price
+    }
+
     image.mv(path.resolve(__dirname, 'public/images', image.name), (error) => {
         Menu.create({
-            ...req.body,
+            ...data,
             image: `/images/${image.name}`
 
         }, (error, post) => {

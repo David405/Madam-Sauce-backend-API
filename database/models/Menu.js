@@ -4,7 +4,7 @@ const MenuSchema = new mongoose.Schema({
     image: String,
     title: String,
     description: String,
-    price: String
+    price: String,
 });
 
 const Menu = mongoose.model('Menu', MenuSchema);
