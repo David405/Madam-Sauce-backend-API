@@ -54,7 +54,7 @@ app.get('/auth/login', redirectIfAuthenticated, loginController);
 app.post('/users/login', redirectIfAuthenticated, loginUserController);
 app.get('/auth/register', redirectIfAuthenticated, createUserController);
 app.post('/users/register', redirectIfAuthenticated, storeUserController);
-app.get('/order/new', createOrderController);
+app.get('/order/new/:id', createOrderController);
 app.post('/order/store', storeOrderController);
 app.get('/auth/logout', redirectIfAuthenticated, logoutController);
 
