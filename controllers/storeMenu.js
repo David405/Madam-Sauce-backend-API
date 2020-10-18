@@ -8,19 +8,18 @@ const storeMenu = (req, res) => {
         price: req.body.price
     }
 
-    const {
-        image
-    } = req.files
-
-    image.mv(path.resolve(__dirname, 'public/images', image.name), (error) => {
-
-        Menu.create({
-            ...data,
-            image: `/images/${image.name}`
-        }, (error, post) => {
-            console.log(data)
-            res.redirect('/')
-        })
+    Menu.create(data, (error, menu) => {
+        if (error) {
+            return res.json({
+                success: false,
+                message: error
+            })
+        } else {
+            return res.json({
+                success: true,
+                message: menu
+            })
+        }
     })
 }
 

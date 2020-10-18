@@ -8,10 +8,16 @@ const storeUser = (req, res) => {
 
     User.create(data, (error, user) => {
         if (error) {
-            return res.redirect('/auth/register')
+            return res.json({
+                success: false,
+                error: error
+            })
+        } else {
+            return res.json({
+                success: true,
+                message: user
+            })
         }
-        console.log(data)
-        res.redirect('/')
     })
 }
 

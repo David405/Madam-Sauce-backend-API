@@ -8,7 +8,7 @@ const storeOrder = (req, res) => {
         menu: req.params.id
     }
 
-    Order.create(data, (error, post) => {
+    Order.create(data, (error, order) => {
         if (error) {
             return res.json({
                 success: false,
@@ -17,7 +17,7 @@ const storeOrder = (req, res) => {
         } else {
             return res.json({
                 success: true,
-                message: post
+                message: order
             })
         }
     })
