@@ -1,6 +1,6 @@
 const Menu = require('../database/models/Menu')
 
-const getMenu = async(req, res) => {
+const getMenu = (req, res) => {
     Menu.find({}, (error, menu) => {
         if (error) {
             return res.json({
