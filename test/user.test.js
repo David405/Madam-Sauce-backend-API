@@ -16,13 +16,13 @@ describe('insert', () => {
         await db.close();
     });
 
-    it('should insert a menu into collection', async() => {
-        const menus = db.collection('menus');
+    it('should insert a user into collection', async() => {
+        const users = db.collection('users');
 
-        const mockMenu = { title: 'chicken pepper soup', description: 'Chicken pepper soup with Heineken', price: 5 };
-        await menus.insertOne(mockMenu);
+        const mockUser = { username: 'admin', password: 'password' };
+        await users.insertOne(mockUser);
 
-        const insertedMenu = await menus.findOne({ title: 'chicken pepper soup' });
-        expect(insertedMenu).toEqual(mockMenu);
+        const insertedUser = await users.findOne({ username: 'admin' });
+        expect(insertedUser).toEqual(mockUser);
     });
 });
