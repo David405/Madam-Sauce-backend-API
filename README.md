@@ -3,7 +3,7 @@
 All routes to be tested can be found in the index.js file<br/>
 
 **localhost:4000** - **GET** method
-* Will get all Menu in the database
+* Will get all Menu in the database<br/><br/>
 
 
 **localhost:4000/users/register** - **POST** method
@@ -16,7 +16,7 @@ All routes to be tested can be found in the index.js file<br/>
 
 
 **localhost:4000/users/login** - **POST** method
-* Will login User(admin) account
+* Will login User(admin) account<br/><br/>
 
 
 **localhost:4000/menu/store** - **POST** method
@@ -26,7 +26,7 @@ All routes to be tested can be found in the index.js file<br/>
 **Parameters**
 * title
 * description
-* price
+* price<br/><br/>
 
 
 **localhost:4000/order/store/:id** - **POST** method
@@ -37,15 +37,15 @@ All routes to be tested can be found in the index.js file<br/>
 * name
 * quantity
 * address
-* menu: ObjectID of parent menu
+* menu: ObjectID of parent menu<br/><br/>
 
 
 **localhost:4000/order/get** - **GET** method
-* Will get all Orders in the database
+* Will get all Orders in the database<br/><br/>
 
 **localhost:4000/order/get/:id** - **GET** method
 * Will get Orders based on their parent Menu  
-*Note: :id is the ObjectID of the parent Menu*
+*Note: :id is the ObjectID of the parent Menu*<br/><br/>
 
 
 **Feature branch has a working frontend design built with Edge template engine**
