@@ -1,5 +1,7 @@
 ## IMPORTANT!
 
+**Feature branch has a working frontend design built with Edge template engine**
+
 All routes to be tested can be found in the index.js file<br/><br/>
 
 **localhost:4000** - **GET** method
@@ -48,6 +50,6 @@ All routes to be tested can be found in the index.js file<br/><br/>
 *Note: :id is the ObjectID of the parent Menu*<br/><br/><br/><br/>
 
 
-**Feature branch has a working frontend design built with Edge template engine**
+
 
 
