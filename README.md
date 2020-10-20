@@ -1,11 +1,11 @@
 ## IMPORTANT!
 
-**Feature branch has a working frontend design built with Edge template engine**
+**Feature branch has a working frontend design built with Edge template engine**<br/><br/><br/>
 
-All routes to be tested can be found in the index.js file<br/><br/>
+All routes to be tested can be found in the index.js file<br/><br/><br/>
 
 **localhost:4000** - **GET** method
-* Will get all Menu in the database<br/><br/><br/><br/><br/>
+* Will get all Menu in the database<br/><br/><br/><br/>
 
 
 **localhost:4000/users/register** - **POST** method
@@ -14,11 +14,11 @@ All routes to be tested can be found in the index.js file<br/><br/>
 
 **Parameters**
 * username
-* password<br/><br/><br/><br/>
+* password<br/><br/><br/>
 
 
 **localhost:4000/users/login** - **POST** method
-* Will login User(admin) account<br/><br/><br/><br/>
+* Will login User(admin) account<br/><br/><br/>
 
 
 **localhost:4000/menu/store** - **POST** method
@@ -28,7 +28,7 @@ All routes to be tested can be found in the index.js file<br/><br/>
 **Parameters**
 * title
 * description
-* price<br/><br/><br/><br/>
+* price<br/><br/><br/>
 
 
 **localhost:4000/order/store/:id** - **POST** method
@@ -39,15 +39,15 @@ All routes to be tested can be found in the index.js file<br/><br/>
 * name
 * quantity
 * address
-* menu: ObjectID of parent menu<br/><br/><br/><br/>
+* menu: ObjectID of parent menu<br/><br/><br/>
 
 
 **localhost:4000/order/get** - **GET** method
-* Will get all Orders in the database<br/><br/><br/><br/>
+* Will get all Orders in the database<br/><br/><br/>
 
 **localhost:4000/order/get/:id** - **GET** method
 * Will get Orders based on their parent Menu  
-*Note: :id is the ObjectID of the parent Menu*<br/><br/><br/><br/>
+*Note: :id is the ObjectID of the parent Menu*<br/><br/><br/>
 
 
 
